@@ -17,7 +17,7 @@ model_params = {'inputText': prompt,
                 'textGenerationConfig': {
                     'maxTokenCount': 0,
                     'stopSequences': [],
-                    temperature': 0,
+                    'temperature': 0,
                     'topP':0,
                     },
                 }
