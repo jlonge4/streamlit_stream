@@ -36,17 +36,19 @@ def st_stream(client: boto3.Session.client, model_kwargs: dict, box, modelid):
                 json_response = json.loads(response['chunk']['bytes'])
                 yield json_response['completion']
 
-    if modelid == 'amazon.titan-tg1-large':
-        s = ""
-        for r in stream_titan(client, model_kwargs):
-            for c in r:
-                s += c
-                time.sleep(.002)
-                box.write(s)
-    else:
-        s = ""
-        for r in stream_claude(client, model_kwargs):
-            for c in r:
-                s += c
-                time.sleep(.002)
-                box.write(s)
+    match modelid:
+        case 'amazon.titan-tg1-large':
+            s = ""
+            for r in stream_titan(client, model_kwargs):
+                for c in r:
+                    s += c
+                    time.sleep(.002)
+                    box.write(s)
+                    
+        case "anthropic.claude-v2":
+            s = ""
+            for r in stream_claude(client, model_kwargs):
+                for c in r:
+                    s += c
+                    time.sleep(.002)
+                    box.write(s)
