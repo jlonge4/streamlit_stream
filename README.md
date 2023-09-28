@@ -34,7 +34,7 @@ submit_button = st.button('Submit', type='primary')
 box = st.empty()
     
     if submit_button:
-        st_stream_bedrock(bedrock, model_params, box, modelId=modelId)```
+        st_stream_bedrock(bedrock, model_params, box, modelId=modelId)
 
 
 
