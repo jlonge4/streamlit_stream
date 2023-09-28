@@ -11,7 +11,7 @@ from streamlit_stream import st_stream_bedrock
 
 bedrock = boto3.client()
 prompt = 'Lets see some streaming action'
-
+modelId = 'amazon.titan-t1-large'
 # Titan parameters
 model_params = {'inputText': prompt,
                 'textGenerationConfig': {
@@ -30,11 +30,11 @@ model_params = {'prompt': prompt,
                 'stop_sequences':[],
                 }
 
-submit_button = st.button('Submit', type='primary)
+submit_button = st.button('Submit', type='primary')
 box = st.empty()
     
     if submit_button:
-        st_stream_bedrock(bedrock_client, model_params, box, modelId='amazon.titan-t1-large')```
+        st_stream_bedrock(bedrock, model_params, box, modelId=modelId)```
 
 
 
