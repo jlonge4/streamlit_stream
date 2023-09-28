@@ -13,7 +13,7 @@ bedrock = boto3.client()
 prompt = 'Lets see some streaming action'
 
 # Titan parameters
-model_params = {'inputText': prompt
+model_params = {'inputText': prompt,
                 'textGenerationConfig': {
                     'maxTokenCount': 0,
                     'stopSequences': [],
@@ -23,11 +23,11 @@ model_params = {'inputText': prompt
                 }
 
 # Claude parameters
-model_params = {'prompt': prompt
+model_params = {'prompt': prompt,
                 'max_tokens_to_sample':0,
                 'temperature':0,
                 'top_k':0,
-                'stop_sequences':[]
+                'stop_sequences':[],
                 }
 
 submit_button = st.button('Submit', type='primary)
