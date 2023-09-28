@@ -11,4 +11,4 @@ submit_button = st.button('Submit', type='primary)
 box = st.empty()
 
 if submit_button:
-    st_stream_bedrock(bedrock_client, model_params, box)
+    st_stream_bedrock(bedrock_client, model_params, box, modelId='amazon.titan-t1-large')
