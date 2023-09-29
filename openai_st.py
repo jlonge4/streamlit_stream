@@ -3,7 +3,7 @@ import time
 
 openai.api_key = ''
 
-def stream_openai(model, prompt, box):
+def stream(model, prompt, box):
     response = openai.ChatCompletion.create(
         model=model,
         messages=[
