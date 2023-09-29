@@ -4,10 +4,31 @@ Bedrock streaming with OpenAI style
 # Requirements:
     boto3
     streamlit
+    openai
 
 # Usage:
 ```python
-from streamlit_stream import st_stream_bedrock
+### OPENAI ###
+
+import streamlit as st
+from streamlit_stream import openai_st
+
+
+st.set_page_config(page_title='St_Stream', page_icon=':robot_face: ')
+st.title('LLM Streaming with streamlit!')
+input = st.text_area('Prompt...')
+submit_button = st.button('Submit', type='primary')
+box = st.empty()
+
+prompt = {'role': 'user', 'content': input}
+
+if submit_button and input:
+    openai_st.stream(model='gpt-3.5-turbo', prompt=prompt, box=box)
+
+
+
+### BEDROCK ### 
+from streamlit_stream import bedrock_st
 
 bedrock = boto3.client()
 prompt = 'Lets see some streaming action'
@@ -34,7 +55,7 @@ submit_button = st.button('Submit', type='primary')
 box = st.empty()
     
     if submit_button:
-        st_stream_bedrock(bedrock, model_params, box, modelId=modelId)
+        bedrock_st.stream(bedrock, model_params, box, modelId=modelId)
 
 
 
