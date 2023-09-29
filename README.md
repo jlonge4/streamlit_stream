@@ -1,5 +1,5 @@
 # streamlit_stream
-Bedrock streaming with OpenAI style
+LLM streaming within streamlit, chatGPT style.
 
 # Requirements:
     boto3
