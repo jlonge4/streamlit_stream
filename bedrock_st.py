@@ -3,7 +3,7 @@ import boto3
 import time
 
 
-def st_stream(client: boto3.Session.client, model_kwargs: dict, box, modelid):
+def stream(client: boto3.Session.client, model_kwargs: dict, box, modelid):
     # Function to stream Titan model response
     def stream_titan(client, model_kwargs):
         response_stream = client.invoke_model_with_response_stream(
