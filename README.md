@@ -1,6 +1,8 @@
 # streamlit_stream
 LLM streaming within streamlit, chatGPT style.
 
+https://github.com/jlonge4/streamlit_stream/assets/91354480/fc5c2f20-5490-4bfe-84df-a880c96d2237
+
 # Requirements:
     boto3
     streamlit
